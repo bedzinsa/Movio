@@ -2,13 +2,12 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.hiltAndroid)
 
-    kotlin("kapt")
+
 }
 
 android {
-    namespace = "com.arunasbedzinskas.movio.data"
+    namespace = "com.arunasbedzinskas.movio.models"
     compileSdk = 34
 
     defaultConfig {
@@ -34,23 +33,4 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
-
-dependencies {
-    implementation(project(":models"))
-
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-
-    implementation(libs.datastore)
-    implementation(libs.gson)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-}
-
-
-kapt {
-    correctErrorTypes = true
 }
