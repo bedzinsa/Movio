@@ -14,4 +14,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Movio"
+
 include(":app")
+include(":data")
+include(":ui")
+include(":domain")
