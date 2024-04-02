@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":models"))
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
