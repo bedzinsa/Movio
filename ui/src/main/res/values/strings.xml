@@ -1,7 +1,18 @@
 <resources>
     <string name="app_name">Movio</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <string name="input_hint_name">Name</string>
+    <string name="input_hint_email">E-Mail Address*</string>
+    <string name="input_hint_password">Password*</string>
+    <string name="input_hint_confirm_password">Confirm Password*</string>
+
+    <string name="input_name_error_blank">Please enter your name</string>
+    <string name="input_email_error_invalid">E-Mail format you provided is invalid</string>
+    <string name="input_password_error_length">Password should be at least 6 characters long</string>
+    <string name="input_password_error_does_not_match">Passwords don\'t match</string>
+
+    <string name="button_text_sign_up">Sign Up</string>
+
+    <string name="cd_sign_up_header">Header image of sign up page consisting of various movie covers</string>
 </resources>
