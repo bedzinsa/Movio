@@ -1,12 +1,10 @@
-package com.arunasbedzinskas.movio.ui.splash
+package com.arunasbedzinskas.movio.ui.screens.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.repeatOnLifecycle
 import com.arunasbedzinskas.movio.models.state.UiState
 import com.arunasbedzinskas.movio.ui.R
 import com.arunasbedzinskas.movio.ui.base.BaseFragment
@@ -45,9 +43,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
         }
     }
 
-    private fun navigateToHome() {
-        TODO("Navigate to Home")
-    }
+    private fun navigateToHome() = navigate(R.id.sf_to_homeFragment)
 
     private fun navigateToSignUp() = navigate(R.id.sf_to_signUpFragment)
 }

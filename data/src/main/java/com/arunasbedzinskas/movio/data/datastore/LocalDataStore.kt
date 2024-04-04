@@ -20,8 +20,6 @@ class LocalDataStore @Inject constructor(
     private val gson: Gson
 ) {
 
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(NAME)
-
     suspend fun setUser(userData: UserData) {
         appContext.dataStore.edit { prefs ->
             prefs[userDataKey] = gson.toJson(userData)
@@ -37,6 +35,7 @@ class LocalDataStore @Inject constructor(
         private const val NAME = "MovioDataStore"
         private const val KEY_USER_DATA = "UserData"
 
+        private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(NAME)
         private val userDataKey = stringPreferencesKey(KEY_USER_DATA)
     }
 }

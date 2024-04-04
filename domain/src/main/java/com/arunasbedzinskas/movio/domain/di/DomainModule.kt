@@ -1,9 +1,11 @@
 package com.arunasbedzinskas.movio.domain.di
 
 import com.arunasbedzinskas.movio.data.datastore.LocalDataStore
-import com.arunasbedzinskas.movio.domain.GetIsAccountCreatedUseCase
-import com.arunasbedzinskas.movio.domain.GetIsAccountCreatedUseCaseImpl
 import com.arunasbedzinskas.movio.domain.dispatcher.AppDispatchers
+import com.arunasbedzinskas.movio.domain.usecase.GetIsAccountCreatedUseCase
+import com.arunasbedzinskas.movio.domain.usecase.GetIsAccountCreatedUseCaseImpl
+import com.arunasbedzinskas.movio.domain.usecase.SaveUserDataUseCase
+import com.arunasbedzinskas.movio.domain.usecase.SaveUserDataUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,4 +27,9 @@ object DomainModule {
     fun provideGetIsAccountCreatedUseCase(
         localDataStore: LocalDataStore
     ): GetIsAccountCreatedUseCase = GetIsAccountCreatedUseCaseImpl(localDataStore)
+
+    @Provides
+    fun provideSaveUserDataUseCase(
+        localDataStore: LocalDataStore
+    ): SaveUserDataUseCase = SaveUserDataUseCaseImpl(localDataStore)
 }

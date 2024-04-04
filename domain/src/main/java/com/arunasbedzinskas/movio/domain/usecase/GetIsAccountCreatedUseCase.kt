@@ -1,9 +1,7 @@
-package com.arunasbedzinskas.movio.domain
+package com.arunasbedzinskas.movio.domain.usecase
 
 import com.arunasbedzinskas.movio.data.datastore.LocalDataStore
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.transform
 import javax.inject.Inject
 
 fun interface GetIsAccountCreatedUseCase {
