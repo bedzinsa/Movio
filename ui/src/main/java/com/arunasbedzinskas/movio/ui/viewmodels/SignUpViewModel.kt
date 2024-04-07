@@ -1,4 +1,4 @@
-package com.arunasbedzinskas.movio.ui.screens.login
+package com.arunasbedzinskas.movio.ui.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,9 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.arunasbedzinskas.movio.domain.usecase.SaveUserDataUseCase
 import com.arunasbedzinskas.movio.domain.validator.SignUpValidator
+import com.arunasbedzinskas.movio.models.Const.PROFILE_IMAGE
 import com.arunasbedzinskas.movio.models.state.PasswordValidationState
 import com.arunasbedzinskas.movio.models.state.UiState
-import com.arunasbedzinskas.movio.ui.R
+import com.arunasbedzinskas.movio.ui.screens.login.SignUpUiProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -61,7 +62,7 @@ class SignUpViewModel @Inject constructor(
 
             // Password left out intentionally - as it should not be saved locally
             // Using stub image due to extended development time to implement camera image
-            val isSuccessful = saveUserDataUseCase(name, email, R.drawable.stub_logo)
+            val isSuccessful = saveUserDataUseCase(name, email, PROFILE_IMAGE)
             _signUpResult.value = if (isSuccessful)
                 UiState.NormalState(Unit)
             else

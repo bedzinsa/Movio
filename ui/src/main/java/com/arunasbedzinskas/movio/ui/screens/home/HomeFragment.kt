@@ -7,16 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.arunasbedzinskas.movio.core.ext.toPx
 import com.arunasbedzinskas.movio.models.ui.CondensedMovieUI
+import com.arunasbedzinskas.movio.ui.R
 import com.arunasbedzinskas.movio.ui.base.BaseFragment
 import com.arunasbedzinskas.movio.ui.callbacks.MovieClickCallback
 import com.arunasbedzinskas.movio.ui.databinding.FragmentHomeBinding
 import com.arunasbedzinskas.movio.ui.decoration.LinearLayoutMarginItemDecoration
+import com.arunasbedzinskas.movio.ui.ext.navigate
+import com.arunasbedzinskas.movio.ui.viewmodels.FavoriteViewModel
+import com.arunasbedzinskas.movio.ui.viewmodels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private val homeViewModel: HomeViewModel by viewModels()
+    private val favoriteViewModel: FavoriteViewModel by viewModels()
 
     override fun onCreateBinding(
         inflater: LayoutInflater,
@@ -35,7 +40,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
             override fun onItemClick(item: CondensedMovieUI) = navigateToMovieDetails(item.id)
 
-            override fun onFavoriteClick(item: CondensedMovieUI) = homeViewModel.onFavoriteChanged(item)
+            override fun onFavoriteClick(item: CondensedMovieUI) = favoriteViewModel.onFavoriteChanged(item)
         }
         binding?.rvHome?.apply {
             addItemDecoration(LinearLayoutMarginItemDecoration(context?.toPx(24) ?: 0))
@@ -56,5 +61,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun navigateToMovieDetails(id: Long) = Unit // TODO
 
-    private fun navigateToSearch() = Unit // TODO
+    private fun navigateToSearch() = navigate(R.id.hf_to_searchMoviesFragment)
 }

@@ -11,6 +11,7 @@ import com.arunasbedzinskas.movio.ui.R
 import com.arunasbedzinskas.movio.ui.base.BaseFragment
 import com.arunasbedzinskas.movio.ui.databinding.FragmentSignUpBinding
 import com.arunasbedzinskas.movio.ui.ext.navigate
+import com.arunasbedzinskas.movio.ui.viewmodels.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

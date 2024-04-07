@@ -11,6 +11,7 @@ import com.arunasbedzinskas.movio.ui.base.BaseFragment
 import com.arunasbedzinskas.movio.ui.databinding.FragmentSplashBinding
 import com.arunasbedzinskas.movio.ui.ext.navigate
 import com.arunasbedzinskas.movio.ui.ext.repeatOnStarted
+import com.arunasbedzinskas.movio.ui.viewmodels.SplashViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
