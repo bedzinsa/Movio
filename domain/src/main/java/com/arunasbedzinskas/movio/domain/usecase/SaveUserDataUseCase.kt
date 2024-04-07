@@ -6,15 +6,15 @@ import kotlinx.coroutines.flow.firstOrNull
 
 fun interface SaveUserDataUseCase {
 
-    suspend operator fun invoke(name: String, email: String): Boolean
+    suspend operator fun invoke(name: String, email: String, avatar: Int): Boolean
 }
 
 internal class SaveUserDataUseCaseImpl(
     private val localDataStore: LocalDataStore
 ) : SaveUserDataUseCase {
 
-    override suspend fun invoke(name: String, email: String): Boolean {
-        val userData = UserData(name, email)
+    override suspend fun invoke(name: String, email: String, avatar: Int): Boolean {
+        val userData = UserData(name, email, avatar)
         localDataStore.setUser(userData)
 
         return localDataStore.getUser().firstOrNull() == userData
