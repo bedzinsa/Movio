@@ -21,6 +21,10 @@
     <string name="home_label_staff_picks">Staff Picks</string>
     <string name="home_greeting_default">Hello 👋</string>
 
+    <string name="search_title">All Movies</string>
+    <string name="search_input_hint">Search</string>
+
     <string name="cd_sign_up_header">Header image of sign up page consisting of various movie covers</string>
     <string name="cd_home_header_search">Icon to open movie search screen</string>
+    <string name="cd_search_nav_icon">Button to navigate to previous page</string>
 </resources>

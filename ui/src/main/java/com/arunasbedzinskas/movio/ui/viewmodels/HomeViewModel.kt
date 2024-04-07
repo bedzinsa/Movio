@@ -1,4 +1,4 @@
-package com.arunasbedzinskas.movio.ui.screens.home
+package com.arunasbedzinskas.movio.ui.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +9,7 @@ import com.arunasbedzinskas.movio.domain.usecase.GetFavoriteMoviesUseCase
 import com.arunasbedzinskas.movio.domain.usecase.GetStaffPickMoviesUseCase
 import com.arunasbedzinskas.movio.domain.usecase.GetUserDataUseCase
 import com.arunasbedzinskas.movio.models.ui.CondensedMovieUI
+import com.arunasbedzinskas.movio.ui.screens.home.HomeProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.launchIn
@@ -21,7 +22,6 @@ class HomeViewModel @Inject constructor(
     private val getUserDataUseCase: GetUserDataUseCase,
     private val getFavoriteMoviesUseCase: GetFavoriteMoviesUseCase,
     private val getStaffPickMoviesUseCase: GetStaffPickMoviesUseCase,
-    private val changeFavoriteMovieUseCase: ChangeFavoriteMovieUseCase,
     private val homeProvider: HomeProvider
 ) : ViewModel() {
 
@@ -30,12 +30,6 @@ class HomeViewModel @Inject constructor(
 
     init {
         getData()
-    }
-
-    fun onFavoriteChanged(condensedMovieUI: CondensedMovieUI) {
-        viewModelScope.launch {
-            changeFavoriteMovieUseCase(condensedMovieUI.id, condensedMovieUI.isFavorite)
-        }
     }
 
     private fun getData() {

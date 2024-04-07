@@ -13,6 +13,7 @@ import com.arunasbedzinskas.movio.ui.R
 import com.arunasbedzinskas.movio.ui.databinding.ViewInputFieldBinding
 import com.arunasbedzinskas.movio.ui.ext.isAnyPassword
 import com.arunasbedzinskas.movio.ui.ext.isInputTypePassword
+import com.arunasbedzinskas.movio.ui.ext.setDrawableLeft
 
 class InputField(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
 
@@ -25,6 +26,12 @@ class InputField(context: Context, attrs: AttributeSet?) : FrameLayout(context, 
             binding.inputField.imeOptions =
                 getInt(R.styleable.InputField_android_imeOptions, EditorInfo.IME_ACTION_NONE)
             binding.inputField.hint = getString(R.styleable.InputField_android_hint)
+            binding.inputField.setDrawableLeft(
+                getResourceId(
+                    R.styleable.InputField_android_drawableStart,
+                    0
+                )
+            )
             recycle()
         }
 

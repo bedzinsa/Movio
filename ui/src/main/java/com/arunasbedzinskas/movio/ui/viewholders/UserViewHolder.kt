@@ -1,5 +1,6 @@
 package com.arunasbedzinskas.movio.ui.viewholders
 
+import coil.load
 import com.arunasbedzinskas.movio.models.ui.AdapterItem
 import com.arunasbedzinskas.movio.models.ui.UserDataUI
 import com.arunasbedzinskas.movio.ui.base.BaseViewHolder
@@ -14,7 +15,7 @@ class UserViewHolder(val binding: HolderUserBinding) : BaseViewHolder(binding) {
 
     private fun initUI(userDataUI: UserDataUI) {
         with(binding) {
-            ivHeaderAvatar.setImageResource(userDataUI.avatar)
+            ivHeaderAvatar.load(userDataUI.avatar)
             tvHeaderUserName.text = userDataUI.name
         }
     }

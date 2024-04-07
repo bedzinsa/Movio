@@ -1,4 +1,4 @@
-package com.arunasbedzinskas.movio.ui.screens.splash
+package com.arunasbedzinskas.movio.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

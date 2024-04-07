@@ -1,15 +1,23 @@
 package com.arunasbedzinskas.movio.ui.ext
 
+import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-fun Fragment.navigate(@IdRes idRes: Int) = findNavController().navigate(idRes)
+fun Fragment.navigate(
+    @IdRes idRes: Int,
+    args: Bundle? = null,
+    navOptions: NavOptions = slideNavOptions()
+) = findNavController().navigate(idRes)
+
+fun Fragment.navigateUp() = findNavController().navigateUp()
 
 fun Fragment.repeatOnStarted(
     block: suspend CoroutineScope.() -> Unit
