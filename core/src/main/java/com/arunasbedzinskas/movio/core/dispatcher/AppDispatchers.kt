@@ -1,4 +1,4 @@
-package com.arunasbedzinskas.movio.domain.dispatcher
+package com.arunasbedzinskas.movio.core.dispatcher
 
 import kotlinx.coroutines.CoroutineDispatcher
 

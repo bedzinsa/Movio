@@ -1,6 +1,7 @@
 package com.arunasbedzinskas.movio.ui.di
 
 import android.content.Context
+import com.arunasbedzinskas.movio.ui.screens.home.HomeProvider
 import com.arunasbedzinskas.movio.ui.screens.login.SignUpUiProvider
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,9 @@ object UIProvidersModule {
     fun provideSignUpUiProvider(
         @ApplicationContext context: Context,
     ): SignUpUiProvider = SignUpUiProvider(context)
+
+    @Provides
+    fun provideHomeProvider(
+        @ApplicationContext context: Context,
+    ): HomeProvider = HomeProvider(context)
 }

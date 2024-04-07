@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":domain"))
     implementation(project(":models"))
 
@@ -54,6 +55,8 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
+    implementation(libs.coil)
+    implementation("me.zhanghai.android.materialratingbar:library:1.4.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

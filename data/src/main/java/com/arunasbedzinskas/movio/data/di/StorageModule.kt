@@ -15,9 +15,6 @@ import dagger.hilt.components.SingletonComponent
 object StorageModule {
 
     @Provides
-    fun provideGson(): Gson = GsonBuilder().create()
-
-    @Provides
     fun provideLocalDataStore(
         @ApplicationContext context: Context,
         gson: Gson

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Movio</string>
-    <string name="title_activity_main">MainActivity</string>
+
+    <string name="generic_our">Our</string>
+    <string name="generic_your">Your</string>
 
     <string name="input_hint_name">Name</string>
     <string name="input_hint_email">E-Mail Address*</string>
@@ -14,5 +16,11 @@
 
     <string name="button_text_sign_up">Sign Up</string>
 
+    <string name="home_movie_rating_text">%1$s / 5</string>
+    <string name="home_label_favorites">Favorites</string>
+    <string name="home_label_staff_picks">Staff Picks</string>
+    <string name="home_greeting_default">Hello 👋</string>
+
     <string name="cd_sign_up_header">Header image of sign up page consisting of various movie covers</string>
+    <string name="cd_home_header_search">Icon to open movie search screen</string>
 </resources>
