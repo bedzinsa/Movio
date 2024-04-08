@@ -8,11 +8,11 @@ data class Movie(
     val director: Director,
     val posterUrl: String,
     val cast: List<CastMember>,
-    val runtime: Int,
+    val runtime: Long,
     val title: String,
     val overview: String,
     val reviews: Int,
     val budget: Long,
-    val language: String,
+    val language: Language,
     val genres: List<Genre>
 )

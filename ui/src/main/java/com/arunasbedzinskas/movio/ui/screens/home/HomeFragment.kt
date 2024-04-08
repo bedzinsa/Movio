@@ -40,7 +40,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
             override fun onItemClick(item: CondensedMovieUI) = navigateToMovieDetails(item.id)
 
-            override fun onFavoriteClick(item: CondensedMovieUI) = favoriteViewModel.onFavoriteChanged(item)
+            override fun onFavoriteClick(item: CondensedMovieUI) =
+                favoriteViewModel.onFavoriteChanged(item.id, item.isFavorite)
         }
         binding?.rvHome?.apply {
             addItemDecoration(LinearLayoutMarginItemDecoration(context?.toPx(24) ?: 0))
@@ -59,7 +60,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    private fun navigateToMovieDetails(id: Long) = Unit // TODO
+    private fun navigateToMovieDetails(id: Long) =
+        navigate(HomeFragmentDirections.hfToMovieDetailsFragment(id))
 
     private fun navigateToSearch() = navigate(R.id.hf_to_searchMoviesFragment)
 }

@@ -35,39 +35,34 @@
         android:id="@+id/tvMovieTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:maxLines="1"
         android:ellipsize="end"
-        app:layout_constraintBottom_toTopOf="@id/tvMovieRating"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/cvMovieRating"
         app:layout_constraintEnd_toEndOf="@id/tvMovieReleaseYear"
         app:layout_constraintStart_toStartOf="@id/tvMovieReleaseYear"
         app:layout_constraintTop_toBottomOf="@id/tvMovieReleaseYear"
         tools:text="The Dark Knight" />
 
-    <TextView
-        android:id="@+id/tvMovieRating"
-        android:layout_width="0dp"
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/cvMovieRating"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        app:drawableStartCompat="@drawable/ic_star"
-        app:drawableTint="@color/yellow"
-        android:textSize="12sp"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/tvMovieReleaseYear"
         app:layout_constraintStart_toStartOf="@id/tvMovieReleaseYear"
-        app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
-        tools:text="5 / 5" />
+        app:layout_constraintTop_toBottomOf="@id/tvMovieTitle" />
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/cbMovieFavorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:button="@drawable/selector_bg_favorite"
-        android:padding="8dp"
         android:checked="true"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

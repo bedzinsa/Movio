@@ -11,6 +11,8 @@ import com.arunasbedzinskas.movio.domain.usecase.GetFavoriteMoviesUseCase
 import com.arunasbedzinskas.movio.domain.usecase.GetFavoriteMoviesUseCaseImpl
 import com.arunasbedzinskas.movio.domain.usecase.GetIsAccountCreatedUseCase
 import com.arunasbedzinskas.movio.domain.usecase.GetIsAccountCreatedUseCaseImpl
+import com.arunasbedzinskas.movio.domain.usecase.GetMovieByIdUseCase
+import com.arunasbedzinskas.movio.domain.usecase.GetMovieByIdUseCaseImpl
 import com.arunasbedzinskas.movio.domain.usecase.GetStaffPickMoviesUseCase
 import com.arunasbedzinskas.movio.domain.usecase.GetStaffPickMoviesUseCaseImpl
 import com.arunasbedzinskas.movio.domain.usecase.GetUserDataUseCase
@@ -80,4 +82,13 @@ object DomainModule {
     @Provides
     fun provideMapToCondensedMovieUIUseCase(): MapToCondensedMovieUIUseCase =
         MapToCondensedMovieUIUseCaseImpl()
+
+    @Provides
+    fun provideGetMovieByIdUseCase(
+        moviesDataAccess: MoviesDataAccess,
+        localDataStore: LocalDataStore,
+    ): GetMovieByIdUseCase = GetMovieByIdUseCaseImpl(
+        moviesDataAccess,
+        localDataStore
+    )
 }

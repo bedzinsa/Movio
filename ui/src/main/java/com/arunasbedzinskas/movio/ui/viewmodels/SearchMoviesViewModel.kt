@@ -51,7 +51,6 @@ class SearchMoviesViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 
-    // TODO Add filter by genre or cast if time allows
     private fun filterMovies(
         query: String,
         movies: List<CondensedMovieUI>
