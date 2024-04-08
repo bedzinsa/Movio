@@ -11,6 +11,7 @@ import com.arunasbedzinskas.movio.ui.base.BaseFragment
 import com.arunasbedzinskas.movio.ui.callbacks.MovieClickCallback
 import com.arunasbedzinskas.movio.ui.databinding.FragmentSearchMoviesBinding
 import com.arunasbedzinskas.movio.ui.decoration.LinearLayoutMarginItemDecoration
+import com.arunasbedzinskas.movio.ui.ext.navigate
 import com.arunasbedzinskas.movio.ui.ext.navigateUp
 import com.arunasbedzinskas.movio.ui.ext.repeatOnStarted
 import com.arunasbedzinskas.movio.ui.viewmodels.FavoriteViewModel
@@ -41,7 +42,7 @@ class SearchMoviesFragment : BaseFragment<FragmentSearchMoviesBinding>() {
                 navigateToMovieDetails(item.id)
 
             override fun onFavoriteClick(item: CondensedMovieUI) =
-                favoriteViewModel.onFavoriteChanged(item)
+                favoriteViewModel.onFavoriteChanged(item.id, item.isFavorite)
         }
 
         binding?.apply {
@@ -64,5 +65,6 @@ class SearchMoviesFragment : BaseFragment<FragmentSearchMoviesBinding>() {
         }
     }
 
-    private fun navigateToMovieDetails(id: Long) = Unit // TODO
+    private fun navigateToMovieDetails(id: Long) =
+        navigate(SearchMoviesFragmentDirections.smfToMovieDetailsFragment(id))
 }

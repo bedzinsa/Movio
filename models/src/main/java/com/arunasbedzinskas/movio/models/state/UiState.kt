@@ -8,3 +8,5 @@ sealed class UiState<T> {
 
     class ErrorState<T>(val error: String) : UiState<T>()
 }
+
+fun <T> UiState<T>.isNormalState() = this is UiState.NormalState

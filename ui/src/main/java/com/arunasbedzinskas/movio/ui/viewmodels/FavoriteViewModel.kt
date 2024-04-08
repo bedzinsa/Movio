@@ -13,9 +13,9 @@ class FavoriteViewModel @Inject constructor(
     private val changeFavoriteMovieUseCase: ChangeFavoriteMovieUseCase
 ) : ViewModel() {
 
-    fun onFavoriteChanged(condensedMovieUI: CondensedMovieUI) {
+    fun onFavoriteChanged(movieId: Long, isFavorite: Boolean) {
         viewModelScope.launch {
-            changeFavoriteMovieUseCase(condensedMovieUI.id, condensedMovieUI.isFavorite)
+            changeFavoriteMovieUseCase(movieId, isFavorite)
         }
     }
 }
